@@ -1,10 +1,10 @@
 #!/bin/sh
-REPOS="https://raw.githubusercontent.com/rajaganjil93/ganjil2/main/"
+REPOS="https://raw.githubusercontent.com/rajaganjil93/ganjil/main/"
 ns_domain_cloudflare() {
-	DOMAIN="scvps.biz.id"
+	DOMAIN="julak.web.id"
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	SUB=$(tr </dev/urandom -dc a-z0-9 | head -c7)
-	SUB_DOMAIN=${SUB}."scvps.biz.id"
+	SUB_DOMAIN=${SUB}."julak.web.id"
 	NS_DOMAIN=dns.${SUB_DOMAIN}
 	CF_ID=putrameratus2@gmail.com
         CF_KEY=8d5c58d345dbb3b34b8420b9b15df5f6b8292
