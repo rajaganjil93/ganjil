@@ -49,15 +49,15 @@ setup_dnstt() {
 	cd
 	rm -rf *
 	mkdir -p /etc/slowdns
-	wget -O dnstt-server "${REPOS}baku/dnstt-server" >/dev/null 2>&1
+	wget -O dnstt-server "${REPOS}linak/dnstt-server" >/dev/null 2>&1
 	chmod +x dnstt-server >/dev/null 2>&1
-	wget -O dnstt-client "${REPOS}baku/dnstt-client" >/dev/null 2>&1
+	wget -O dnstt-client "${REPOS}linak/dnstt-client" >/dev/null 2>&1
 	chmod +x dnstt-client >/dev/null 2>&1
 	./dnstt-server -gen-key -privkey-file server.key -pubkey-file server.pub
 	chmod +x *
 	mv * /etc/slowdns
-	wget -O /etc/systemd/system/client.service "${REPOS}baku/client" >/dev/null 2>&1
-	wget -O /etc/systemd/system/server.service "${REPOS}baku/server" >/dev/null 2>&1
+	wget -O /etc/systemd/system/client.service "${REPOS}linak/client" >/dev/null 2>&1
+	wget -O /etc/systemd/system/server.service "${REPOS}linak/server" >/dev/null 2>&1
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/client.service 
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/server.service 
 }
